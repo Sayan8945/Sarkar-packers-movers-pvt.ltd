@@ -1,8 +1,8 @@
 export const COMPANY = {
   name: "OM Packers & Movers",
   tagline: "Safe, Secure and Trusted",
-  phone: "+91 98765 43210",
-  phone2: "+91 91234 56789",
+  phone: "+91 89450 97611",
+  phone2: "+91 89450 97611",
   email: "info@ompackers.in",
   address: "123, Park Street, Kolkata - 700016, West Bengal",
   whatsapp: "919876543210",
