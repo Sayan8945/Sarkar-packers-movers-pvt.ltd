@@ -5,7 +5,7 @@ export const COMPANY = {
   phone2: "+91 89450 97611",
   email: "info@ompackers.in",
   address: "123, Park Street, Kolkata - 700016, West Bengal",
-  whatsapp: "919876543210",
+  whatsapp: "918945097611",
   founded: 2007,
   experience: 17,
 };
