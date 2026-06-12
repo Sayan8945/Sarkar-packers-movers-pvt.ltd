@@ -97,8 +97,8 @@ om-packers/
 
 ### Prerequisites
 
-- Node.js 18+
-- npm 9+
+- Node.js 20+
+- npm 10+
 
 ### Install & Run
 
@@ -112,12 +112,44 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Build for Production
+### Build & Type-check for Production
 
 ```bash
-npm run build
-npm run start
+npm run type-check   # TypeScript check (no emit)
+npm run build        # Production build
+npm run start        # Serve production build locally
 ```
+
+---
+
+## Deploying to Vercel
+
+### One-click deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+### Manual deploy steps
+
+1. Push the repository to GitHub/GitLab
+2. Import the project in [vercel.com/new](https://vercel.com/new)
+3. Vercel auto-detects Next.js — no config needed beyond `vercel.json`
+4. Set the region to `bom1` (Mumbai) for India-based traffic (already in `vercel.json`)
+5. Click **Deploy**
+
+### Environment variables
+
+No environment variables are required for the base deployment. If you add a backend or analytics later, add them in **Vercel Dashboard → Project → Settings → Environment Variables**.
+
+### Vercel deployment checklist
+
+- [x] `vercel.json` with framework, build/install commands, region, and cache headers
+- [x] `next.config.ts` with security headers, image optimisation, and compression
+- [x] All images use `next/image` with `priority` on LCP images
+- [x] No `.env` files committed (covered by `.gitignore`)
+- [x] `engines.node` set to `>=20.0.0` in `package.json`
+- [x] Static export — homepage prerendered as static HTML
+- [x] No build warnings or TypeScript errors
+- [x] ESLint passes with zero errors
 
 ---
 

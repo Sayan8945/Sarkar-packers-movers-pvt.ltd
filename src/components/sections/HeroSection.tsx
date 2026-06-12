@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { Award, Shield, Star, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import QuoteForm from "@/components/sections/QuoteForm";
@@ -32,7 +33,18 @@ export default function HeroSection() {
       >
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy opacity-90 z-10" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80')] bg-cover bg-center opacity-20" />
+        {/* Optimised bg via Next/Image */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=60"
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover opacity-20"
+            aria-hidden="true"
+          />
+        </div>
 
         {/* Animated grid */}
         <div
@@ -117,7 +129,7 @@ export default function HeroSection() {
               </span>
               <br />
               <span className="text-gradient">Movers</span>{" "}
-              <span className="text-white/90">in Kolkata</span>
+              <span className="text-white/90">in India</span>
             </motion.h1>
 
             {/* Subheadline */}

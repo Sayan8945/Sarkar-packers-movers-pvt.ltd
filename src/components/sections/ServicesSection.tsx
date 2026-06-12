@@ -1,12 +1,13 @@
 "use client";
 
+import type { ElementType } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Home, Building2, Car, Bike, Warehouse, Package, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/constants";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, ElementType> = {
   Home, Building2, Car, Bike, Warehouse, Package,
 };
 

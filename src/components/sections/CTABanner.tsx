@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Phone, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COMPANY } from "@/lib/constants";
@@ -10,7 +11,18 @@ export default function CTABanner() {
     <section id="contact" className="py-20 lg:py-28 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy" />
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80')] bg-cover bg-center opacity-5" />
+      {/* Optimised background image via Next/Image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=60"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-5"
+          priority={false}
+          aria-hidden="true"
+        />
+      </div>
 
       {/* Glow effects */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl" />

@@ -32,7 +32,7 @@ export default function WhyChooseUs() {
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-10">
                 We combine 17+ years of experience with modern technology to deliver a
-                relocation experience that's stress-free, transparent, and reliable.
+                relocation experience that&apos;s stress-free, transparent, and reliable.
               </p>
             </motion.div>
 

@@ -1,10 +1,11 @@
 "use client";
 
+import type { ElementType } from "react";
 import { motion } from "framer-motion";
 import { FileText, Search, Package, Truck, CheckCircle } from "lucide-react";
 import { PROCESS_STEPS } from "@/lib/constants";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, ElementType> = {
   FileText, Search, Package, Truck, CheckCircle,
 };
 

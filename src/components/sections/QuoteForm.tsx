@@ -39,10 +39,9 @@ export default function QuoteForm() {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (_data: FormData) => {
     setIsLoading(true);
     await new Promise((r) => setTimeout(r, 1800));
-    console.log("Quote request:", data);
     setIsLoading(false);
     setSubmitted(true);
   };
