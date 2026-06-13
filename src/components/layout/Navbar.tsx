@@ -180,7 +180,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between mb-8">
             <div className="relative h-12 w-40">
               <Image
-                src="/logo.jpeg"
+                src="/logo.png"
                 alt="Sarkar Packers and Movers"
                 fill
                 sizes="160px"
