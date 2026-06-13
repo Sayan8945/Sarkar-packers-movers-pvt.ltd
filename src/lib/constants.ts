@@ -1,9 +1,10 @@
 export const COMPANY = {
-  name: "OM Packers & Movers",
-  tagline: "Safe, Secure and Trusted",
+  name: "Sarkar Packers and Movers Pvt. Ltd.",
+  shortName: "Sarkar Packers",
+  tagline: "Safe, Reliable and On Time",
   phone: "+91 89450 97611",
   phone2: "+91 89450 97611",
-  email: "info@ompackers.in",
+  email: "info@sarkarpackers.in",
   address: "123, Park Street, Kolkata - 700016, West Bengal",
   whatsapp: "918945097611",
   founded: 2007,
@@ -89,7 +90,7 @@ export const TESTIMONIALS = [
     role: "HR Manager, TCS Kolkata",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5,
-    text: "Absolutely seamless experience! OM Packers moved our entire 3BHK without a single scratch. The team was professional, punctual, and handled everything with extreme care. Highly recommended!",
+    text: "Absolutely seamless experience! Sarkar Packers moved our entire 3BHK without a single scratch. The team was professional, punctual, and handled everything with extreme care. Highly recommended!",
     city: "Kolkata → Mumbai",
   },
   {
@@ -105,7 +106,7 @@ export const TESTIMONIALS = [
     role: "Homemaker",
     image: "https://randomuser.me/api/portraits/women/68.jpg",
     rating: 5,
-    text: "My first time moving inter-city and I was so stressed. But OM Packers made it feel effortless. Real-time tracking, careful packing, and on-time delivery. 10/10!",
+    text: "My first time moving inter-city and I was so stressed. But Sarkar Packers made it feel effortless. Real-time tracking, careful packing, and on-time delivery. 10/10!",
     city: "Kolkata → Delhi",
   },
   {
@@ -186,7 +187,7 @@ export const FAQS = [
   {
     question: "Are you IBA approved?",
     answer:
-      "Yes, OM Packers & Movers is fully IBA (Indian Banks Association) approved. This certification ensures we meet the highest standards of service quality and reliability, making us eligible to handle bank employee relocations.",
+      "Yes, Sarkar Packers and Movers Pvt. Ltd. is fully IBA (Indian Banks Association) approved. This certification ensures we meet the highest standards of service quality and reliability, making us eligible to handle bank employee relocations.",
   },
   {
     question: "Do you provide insurance for goods?",

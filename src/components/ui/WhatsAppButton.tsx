@@ -8,7 +8,7 @@ import { COMPANY } from "@/lib/constants";
 export default function WhatsAppButton() {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const waLink = `https://wa.me/${COMPANY.whatsapp}?text=Hi%20OM%20Packers!%20I'd%20like%20a%20free%20moving%20quote.`;
+  const waLink = `https://wa.me/${COMPANY.whatsapp}?text=Hi%20Sarkar%20Packers!%20I'd%20like%20a%20free%20moving%20quote.`;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="font-semibold text-gray-900 text-sm">OM Packers Support</p>
+                <p className="font-semibold text-gray-900 text-sm">Sarkar Packers Support</p>
                 <p className="text-xs text-green-500">● Online now</p>
               </div>
             </div>

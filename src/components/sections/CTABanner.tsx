@@ -68,7 +68,7 @@ export default function CTABanner() {
 
           <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Join <span className="text-white font-semibold">5000+</span> happy customers
-            who trusted OM Packers for their relocation. Get a transparent quote in minutes.
+            who trusted Sarkar Packers for their relocation. Get a transparent quote in minutes.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">

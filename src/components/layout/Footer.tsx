@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Truck,
   MapPin,
   Phone,
   Mail,
@@ -60,16 +60,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="w-10 h-10 bg-brand-red rounded-xl flex items-center justify-center">
-                <Truck className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <span className="text-white font-bold text-lg block leading-tight">
-                  OM <span className="text-brand-red">Packers</span>
-                </span>
-                <span className="text-gray-500 text-[10px] uppercase tracking-widest">
-                  & Movers
-                </span>
+              <div className="relative h-14 w-44">
+                <Image
+                  src="/logo.png"
+                  alt="Sarkar Packers and Movers Pvt. Ltd."
+                  fill
+                  sizes="176px"
+                  className="object-contain"
+                />
               </div>
             </Link>
 
@@ -211,7 +209,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} OM Packers & Movers. All rights reserved.
+            © {new Date().getFullYear()} Sarkar Packers and Movers Pvt. Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             {["Privacy Policy", "Terms of Service", "Sitemap"].map((item) => (
