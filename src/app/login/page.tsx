@@ -199,13 +199,13 @@ export default function UserLoginPage() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               {/* Email */}
               <div>
-                <label className="block text-sm font-medium text-slate-300 lg:text-gray-700 mb-1.5">Email</label>
+                <label className="block text-sm font-medium text-slate-200 lg:text-gray-700 mb-1.5">Email</label>
                 <input
                   {...register("email")}
                   type="email"
                   placeholder="you@example.com"
                   autoComplete="email"
-                  className="w-full h-11 px-4 bg-white/8 lg:bg-transparent border border-white/15 lg:border-gray-200 rounded-xl text-sm text-white lg:text-gray-900 placeholder:text-slate-500 lg:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all duration-200"
+                  className="w-full h-11 px-4 bg-white/90 lg:bg-transparent border border-white/20 lg:border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all duration-200"
                 />
                 {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
               </div>
@@ -213,7 +213,7 @@ export default function UserLoginPage() {
               {/* Password */}
               <div>
                 <div className="flex items-center justify-between mb-1.5">
-                  <label className="text-sm font-medium text-slate-300 lg:text-gray-700">Password</label>
+                  <label className="text-sm font-medium text-slate-200 lg:text-gray-700">Password</label>
                   <Link href="/forgot-password" className="text-xs text-brand-red hover:text-brand-red-dark transition-colors duration-200">
                     Forgot?
                   </Link>
@@ -224,10 +224,10 @@ export default function UserLoginPage() {
                     type={showPw ? "text" : "password"}
                     placeholder="••••••••"
                     autoComplete="current-password"
-                    className="w-full h-11 px-4 pr-11 bg-white/8 lg:bg-transparent border border-white/15 lg:border-gray-200 rounded-xl text-sm text-white lg:text-gray-900 placeholder:text-slate-500 lg:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all duration-200"
+                    className="w-full h-11 px-4 pr-11 bg-white/90 lg:bg-transparent border border-white/20 lg:border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all duration-200"
                   />
                   <button type="button" onClick={() => setShowPw(!showPw)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 lg:text-gray-400 lg:hover:text-gray-600 transition-colors duration-200"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
                   >
                     {showPw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -238,7 +238,7 @@ export default function UserLoginPage() {
               {/* Remember */}
               <div className="flex items-center gap-2.5">
                 <input {...register("rememberMe")} id="rem" type="checkbox" className="h-4 w-4 rounded accent-brand-red" />
-                <label htmlFor="rem" className="text-sm text-slate-400 lg:text-gray-600 select-none">Remember me</label>
+                <label htmlFor="rem" className="text-sm text-slate-300 lg:text-gray-600 select-none">Remember me</label>
               </div>
 
               <button type="submit" disabled={isLoading}

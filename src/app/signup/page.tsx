@@ -206,41 +206,41 @@ export default function UserSignupPage() {
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                     {/* Full Name */}
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 lg:text-gray-700 mb-1.5">Full Name</label>
+                      <label className="block text-sm font-medium text-slate-200 lg:text-gray-700 mb-1.5">Full Name</label>
                       <input {...register("fullName")} placeholder="Your full name"
-                        className="w-full h-11 px-4 bg-white/8 lg:bg-transparent border border-white/15 lg:border-gray-200 rounded-xl text-sm text-white lg:text-gray-900 placeholder:text-slate-500 lg:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
+                        className="w-full h-11 px-4 bg-white/90 lg:bg-transparent border border-white/20 lg:border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
                       />
                       {errors.fullName && <p className="text-red-400 text-xs mt-1">{errors.fullName.message}</p>}
                     </div>
 
                     {/* Email */}
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 lg:text-gray-700 mb-1.5">Email</label>
+                      <label className="block text-sm font-medium text-slate-200 lg:text-gray-700 mb-1.5">Email</label>
                       <input {...register("email")} type="email" placeholder="you@example.com"
-                        className="w-full h-11 px-4 bg-white/8 lg:bg-transparent border border-white/15 lg:border-gray-200 rounded-xl text-sm text-white lg:text-gray-900 placeholder:text-slate-500 lg:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
+                        className="w-full h-11 px-4 bg-white/90 lg:bg-transparent border border-white/20 lg:border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
                       />
                       {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
                     </div>
 
                     {/* Mobile */}
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 lg:text-gray-700 mb-1.5">Mobile Number</label>
+                      <label className="block text-sm font-medium text-slate-200 lg:text-gray-700 mb-1.5">Mobile Number</label>
                       <input {...register("mobile")} type="tel" placeholder="10-digit number"
-                        className="w-full h-11 px-4 bg-white/8 lg:bg-transparent border border-white/15 lg:border-gray-200 rounded-xl text-sm text-white lg:text-gray-900 placeholder:text-slate-500 lg:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
+                        className="w-full h-11 px-4 bg-white/90 lg:bg-transparent border border-white/20 lg:border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
                       />
                       {errors.mobile && <p className="text-red-400 text-xs mt-1">{errors.mobile.message}</p>}
                     </div>
 
                     {/* Password */}
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 lg:text-gray-700 mb-1.5">Password</label>
+                      <label className="block text-sm font-medium text-slate-200 lg:text-gray-700 mb-1.5">Password</label>
                       <div className="relative">
                         <input {...register("password")} type={showPw ? "text" : "password"} placeholder="Min 8 characters"
                           onChange={e => setPw(e.target.value)}
-                          className="w-full h-11 px-4 pr-11 bg-white/8 lg:bg-transparent border border-white/15 lg:border-gray-200 rounded-xl text-sm text-white lg:text-gray-900 placeholder:text-slate-500 lg:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
+                          className="w-full h-11 px-4 pr-11 bg-white/90 lg:bg-transparent border border-white/20 lg:border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
                         />
                         <button type="button" onClick={() => setShowPw(!showPw)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 lg:text-gray-400 lg:hover:text-gray-600"
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 lg:text-gray-400 lg:hover:text-gray-600"
                         >
                           {showPw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                         </button>
@@ -249,10 +249,10 @@ export default function UserSignupPage() {
                         <div className="mt-2">
                           <div className="flex gap-1 mb-0.5">
                             {[0,1,2,3].map(k => (
-                              <div key={k} className={`h-1 flex-1 rounded-full transition-colors duration-300 ${k < pwStrength.score ? pwStrength.color : "bg-white/10 lg:bg-gray-200"}`} />
+                              <div key={k} className={`h-1 flex-1 rounded-full transition-colors duration-300 ${k < pwStrength.score ? pwStrength.color : "bg-white/20 lg:bg-gray-200"}`} />
                             ))}
                           </div>
-                          <p className="text-xs text-slate-500 lg:text-gray-400">
+                          <p className="text-xs text-slate-300 lg:text-gray-400">
                             Strength: <span className="font-medium text-white lg:text-gray-700">{pwStrength.label}</span>
                           </p>
                         </div>
@@ -262,13 +262,13 @@ export default function UserSignupPage() {
 
                     {/* Confirm Password */}
                     <div>
-                      <label className="block text-sm font-medium text-slate-300 lg:text-gray-700 mb-1.5">Confirm Password</label>
+                      <label className="block text-sm font-medium text-slate-200 lg:text-gray-700 mb-1.5">Confirm Password</label>
                       <div className="relative">
                         <input {...register("confirmPassword")} type={showCpw ? "text" : "password"} placeholder="Repeat password"
-                          className="w-full h-11 px-4 pr-11 bg-white/8 lg:bg-transparent border border-white/15 lg:border-gray-200 rounded-xl text-sm text-white lg:text-gray-900 placeholder:text-slate-500 lg:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
+                          className="w-full h-11 px-4 pr-11 bg-white/90 lg:bg-transparent border border-white/20 lg:border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-200"
                         />
                         <button type="button" onClick={() => setShowCpw(!showCpw)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 lg:text-gray-400 lg:hover:text-gray-600"
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 lg:text-gray-400 lg:hover:text-gray-600"
                         >
                           {showCpw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                         </button>
@@ -279,7 +279,7 @@ export default function UserSignupPage() {
                     {/* Terms */}
                     <div className="flex items-start gap-2.5">
                       <input {...register("terms")} id="terms" type="checkbox" className="h-4 w-4 mt-0.5 rounded accent-brand-red" />
-                      <label htmlFor="terms" className="text-xs text-slate-400 lg:text-gray-600">
+                      <label htmlFor="terms" className="text-xs text-slate-300 lg:text-gray-600">
                         I agree to the{" "}
                         <Link href="#" className="text-brand-red hover:underline">Terms</Link>{" "}
                         and{" "}
