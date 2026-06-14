@@ -12,6 +12,7 @@ import {
   LogOut, Settings, User, Award,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
+import { handleNavClick } from "@/lib/smoothScroll";
 import {
   getAdminUser, isAdminAuthenticated, adminLogout,
   isUserAuthenticated, getUserUser, userLogout,
@@ -29,12 +30,12 @@ const sidebarLinks = [
 ];
 
 const serviceItems = [
-  { icon: Home, label: "Household Shifting", href: "#services" },
-  { icon: Building2, label: "Office Relocation", href: "#services" },
-  { icon: Car, label: "Car Transportation", href: "#services" },
-  { icon: Bike, label: "Bike Transportation", href: "#services" },
-  { icon: Warehouse, label: "Warehousing", href: "#services" },
-  { icon: Package, label: "Packing Services", href: "#services" },
+  { icon: Home,      label: "Household Shifting",  href: "#services" },
+  { icon: Building2, label: "Office Relocation",   href: "#services" },
+  { icon: Car,       label: "Car Transportation",  href: "#services" },
+  { icon: Bike,      label: "Bike Transportation", href: "#services" },
+  { icon: Warehouse, label: "Local Shifting",      href: "#services" },
+  { icon: Package,   label: "Domestic Relocation", href: "#services" },
 ];
 
 const desktopNavLinks = [
@@ -176,11 +177,12 @@ export default function Navbar() {
             {/* ── Desktop nav ─────────────────────────── */}
             <nav className="hidden xl:flex items-center gap-0.5 flex-1 justify-center">
               {desktopNavLinks.map(link => (
-                <Link key={link.label} href={link.href}
-                  className="px-3.5 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200 rounded-lg hover:bg-white/5 whitespace-nowrap"
+                <a key={link.label} href={link.href}
+                  onClick={e => handleNavClick(e, link.href)}
+                  className="px-3.5 py-2 text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200 rounded-lg hover:bg-white/5 whitespace-nowrap cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
               {/* Services mega */}
               <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
@@ -189,14 +191,15 @@ export default function Navbar() {
                 </button>
                 <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-brand-navy-light border border-white/10 rounded-2xl shadow-2xl p-4 grid grid-cols-2 gap-1.5 transition-all duration-200 origin-top ${servicesOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}`}>
                   {serviceItems.map(({ icon: Icon, label, href }) => (
-                    <Link key={label} href={href}
-                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-brand-red/10 hover:text-brand-red text-gray-300 transition-all duration-150 group"
+                    <a key={label} href={href}
+                      onClick={e => handleNavClick(e, href)}
+                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-brand-red/10 hover:text-brand-red text-gray-300 transition-all duration-150 group cursor-pointer"
                     >
                       <div className="w-7 h-7 bg-brand-red/10 rounded-lg flex items-center justify-center group-hover:bg-brand-red/20 flex-shrink-0">
                         <Icon className="w-3.5 h-3.5 text-brand-red" />
                       </div>
                       <span className="text-sm font-medium">{label}</span>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -337,12 +340,13 @@ export default function Navbar() {
                 animate={{ opacity: mobileOpen ? 1 : 0, x: mobileOpen ? 0 : 20 }}
                 transition={{ delay: i * 0.04, duration: 0.25 }}
               >
-                <Link href={link.href} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 text-sm font-medium"
+                <a href={link.href}
+                  onClick={e => handleNavClick(e, link.href, () => setMobileOpen(false))}
+                  className="flex items-center gap-2 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 text-sm font-medium cursor-pointer"
                 >
                   {link.badge && <Award className="w-3.5 h-3.5 text-brand-red flex-shrink-0" />}
                   {link.label}
-                </Link>
+                </a>
               </motion.div>
             ))}
 
@@ -355,12 +359,13 @@ export default function Navbar() {
             >
               <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Services</p>
               {serviceItems.map(({ icon: Icon, label, href }) => (
-                <Link key={label} href={href} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-3 py-2.5 text-gray-400 hover:text-white transition-colors duration-200"
+                <a key={label} href={href}
+                  onClick={e => handleNavClick(e, href, () => setMobileOpen(false))}
+                  className="flex items-center gap-3 py-2.5 text-gray-400 hover:text-white transition-colors duration-200 cursor-pointer"
                 >
                   <Icon className="w-4 h-4 text-brand-red flex-shrink-0" />
                   <span className="text-sm">{label}</span>
-                </Link>
+                </a>
               ))}
             </motion.div>
           </nav>
@@ -375,11 +380,12 @@ export default function Navbar() {
             <Phone className="w-4 h-4" />
             <span> Call Now {COMPANY.phone}</span>
           </a>
-          <Link href="#quote" onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 w-full h-10 bg-brand-red/10 hover:bg-brand-red/20 border border-brand-red/20 text-brand-red text-sm font-semibold rounded-xl transition-colors duration-200"
+          <a href="#quote"
+            onClick={e => handleNavClick(e, "#quote", () => setMobileOpen(false))}
+            className="flex items-center justify-center gap-2 w-full h-10 bg-brand-red/10 hover:bg-brand-red/20 border border-brand-red/20 text-brand-red text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
           >
             Get Free Quote
-          </Link>
+          </a>
         </div>
       </motion.div>
     </>

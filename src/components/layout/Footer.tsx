@@ -17,14 +17,15 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
+import { handleNavClick } from "@/lib/smoothScroll";
 
 const services = [
   "Household Shifting",
   "Office Relocation",
   "Car Transportation",
   "Bike Transportation",
-  "Warehousing",
-  "Packing Services",
+  "Local Shifting",
+  "Domestic Relocation",
 ];
 
 const cities = [
@@ -105,13 +106,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((s) => (
                 <li key={s}>
-                  <Link
-                    href="#services"
-                    className="text-gray-400 hover:text-brand-red text-sm transition-colors duration-200 flex items-center gap-2 group"
+                  <a href="#services"
+                    onClick={e => handleNavClick(e, "#services")}
+                    className="text-gray-400 hover:text-brand-red text-sm transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
                   >
                     <span className="w-1.5 h-1.5 bg-brand-red/40 rounded-full group-hover:bg-brand-red transition-colors duration-200" />
                     {s}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -124,22 +125,21 @@ export default function Footer() {
             </h3>
             <div className="grid grid-cols-2 gap-2">
               {cities.map((city) => (
-                <Link
-                  key={city}
-                  href="#cities"
-                  className="text-gray-400 hover:text-brand-red text-sm transition-colors duration-200"
+                <a key={city} href="#cities"
+                  onClick={e => handleNavClick(e, "#cities")}
+                  className="text-gray-400 hover:text-brand-red text-sm transition-colors duration-200 cursor-pointer"
                 >
                   {city}
-                </Link>
+                </a>
               ))}
             </div>
             <div className="mt-4">
-              <Link
-                href="#cities"
-                className="text-brand-red hover:text-brand-red-light text-xs font-semibold transition-colors duration-200"
+              <a href="#cities"
+                onClick={e => handleNavClick(e, "#cities")}
+                className="text-brand-red hover:text-brand-red-light text-xs font-semibold transition-colors duration-200 cursor-pointer"
               >
                 View all 100+ cities →
-              </Link>
+              </a>
             </div>
           </div>
 

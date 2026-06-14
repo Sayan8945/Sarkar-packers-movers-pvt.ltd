@@ -2,155 +2,199 @@
 
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
-import { CITIES } from "@/lib/constants";
+import dynamic from "next/dynamic";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+
+// Lazy-load Maps — excluded from initial bundle, SSR disabled (needs window)
+const IndiaCoverageMap = dynamic(
+  () => import("@/components/coverage/IndiaCoverageMap"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="animate-pulse bg-brand-navy-light rounded-3xl h-[350px] lg:h-[500px] w-full" />
+    ),
+  }
+);
+
+/* ── Stats ──────────────────────────────────────────────── */
+const COVERAGE_STATS = [
+  { value: 30,   suffix: "+", label: "Cities Covered" },
+  { value: 4,    suffix: "",  label: "States Served"  },
+  { value: 17,   suffix: "+", label: "Years Experience" },
+  { value: 5000, suffix: "+", label: "Successful Relocations" },
+];
+
+/* ── Featured cities grouped by state ──────────────────── */
+const STATE_CITIES: { state: string; color: string; cities: string[] }[] = [
+  {
+    state: "West Bengal",
+    color: "text-brand-red",
+    cities: ["Siliguri (HQ)", "Kolkata", "Howrah", "Hooghly", "Durgapur", "Asansol", "Kharagpur", "Haldia", "Bardhaman", "Malda", "Jalpaiguri", "Cooch Behar", "Alipurduar", "Dinhata", "Mathabhanga", "Mal Bazar"],
+  },
+  {
+    state: "Assam",
+    color: "text-blue-400",
+    cities: ["Guwahati", "Silchar", "Dibrugarh", "Jorhat", "Nagaon"],
+  },
+  {
+    state: "Bihar",
+    color: "text-amber-400",
+    cities: ["Patna", "Gaya", "Muzaffarpur", "Bhagalpur", "Purnia"],
+  },
+  {
+    state: "Odisha",
+    color: "text-emerald-400",
+    cities: ["Bhubaneswar", "Cuttack", "Rourkela", "Sambalpur", "Puri"],
+  },
+  {
+    state: "Jharkhand",
+    color: "text-purple-400",
+    cities: ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro"],
+  },
+];
 
 export default function CitySection() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
   return (
-    <section id="cities" className="py-20 lg:py-28 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/20 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
+    <section id="cities" className="py-20 lg:py-28 bg-brand-navy relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-navy via-brand-navy-light to-brand-navy" />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(225,29,72,1) 1px, transparent 1px)",
+          backgroundSize: "36px 36px",
+        }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* ── Header ─────────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
-          <span className="inline-block px-4 py-1.5 bg-brand-red/10 text-brand-red text-xs font-semibold uppercase tracking-wider rounded-full mb-3">
-            Pan India Coverage
+          <span className="inline-block px-4 py-1.5 bg-brand-red/20 text-brand-red text-xs font-semibold uppercase tracking-wider rounded-full mb-3 border border-brand-red/20">
+            Our Service Area
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
-            We Move You Anywhere in{" "}
-            <span className="text-gradient">India</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Coverage Across{" "}
+            <span className="text-gradient">Eastern India</span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            With a network spanning 100+ cities, we ensure seamless relocation to
-            every corner of the country.
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Serving Eastern India with trusted packing and moving solutions —
+            headquartered in Kolkata with operations across West Bengal, Assam,
+            Bihar, Odisha, and Jharkhand.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* India map visual */}
+        {/* ── Stats row ──────────────────────────────────── */}
+        <div ref={ref} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {COVERAGE_STATS.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.4 }}
+              className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-center"
+            >
+              <div className="text-2xl sm:text-3xl font-bold text-white mb-0.5">
+                {inView ? (
+                  <CountUp end={stat.value} duration={2.2} separator="," delay={i * 0.15} />
+                ) : "0"}
+                <span className="text-brand-red">{stat.suffix}</span>
+              </div>
+              <p className="text-gray-400 text-xs font-medium">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* ── Map ────────────────────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 rounded-3xl shadow-2xl overflow-hidden"
+        >
+          <IndiaCoverageMap />
+        </motion.div>
+
+        {/* ── City grid by state + CTA ────────────────────── */}
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+
+          {/* State-grouped city list */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            transition={{ duration: 0.6 }}
+            className="space-y-5"
           >
-            <div className="relative bg-gradient-to-br from-brand-navy to-brand-navy-light rounded-3xl overflow-hidden aspect-square max-w-lg mx-auto shadow-2xl border border-white/5">
-              {/* Stylized India map outline using SVG */}
-              <svg
-                viewBox="0 0 100 100"
-                className="w-full h-full p-6 opacity-20"
-                fill="none"
+            <h3 className="text-lg font-bold text-white">Locations We Serve</h3>
+            {STATE_CITIES.map((group, gi) => (
+              <motion.div
+                key={group.state}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: gi * 0.07 }}
               >
-                <path
-                  d="M50,8 L62,12 L70,20 L75,32 L72,45 L65,55 L68,65 L62,75 L55,85 L50,92 L45,85 L38,75 L32,65 L35,55 L28,45 L25,32 L30,20 L38,12 Z"
-                  stroke="rgba(225,29,72,0.6)"
-                  strokeWidth="0.5"
-                  fill="rgba(225,29,72,0.05)"
-                />
-              </svg>
-
-              {/* City dots */}
-              {CITIES.map((city, i) => (
-                <motion.div
-                  key={city.name}
-                  initial={{ scale: 0, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.4, type: "spring" }}
-                  className="absolute group"
-                  style={{ left: `${city.x}%`, top: `${city.y}%`, transform: "translate(-50%, -50%)" }}
-                >
-                  <div className="relative">
-                    <motion.div
-                      animate={{ scale: [1, 1.5, 1], opacity: [0.6, 0, 0.6] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                      className={`absolute inset-0 rounded-full ${city.isHQ ? "bg-brand-red" : "bg-blue-400"}`}
-                    />
-                    <div
-                      className={`relative w-3 h-3 rounded-full border-2 border-white shadow-lg cursor-pointer ${
-                        city.isHQ ? "bg-brand-red" : "bg-blue-400"
-                      }`}
-                    />
-                    {/* Tooltip */}
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-white text-brand-navy text-xs font-semibold rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-                      {city.name}
-                      {city.isHQ && (
-                        <span className="ml-1 text-brand-red text-[10px]">(HQ)</span>
-                      )}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white" />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-gray-400">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-brand-red" />
-                  <span>Headquarters (Kolkata)</span>
+                <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${group.color}`}>
+                  {group.state}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {group.cities.map(city => (
+                    <span key={city}
+                      className="inline-flex items-center gap-1 bg-white/5 border border-white/8 rounded-full px-2.5 py-1 text-xs text-gray-300 hover:border-brand-red/30 hover:text-white transition-colors duration-150"
+                    >
+                      <MapPin className="w-2.5 h-2.5 text-brand-red flex-shrink-0" />
+                      {city}
+                    </span>
+                  ))}
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-blue-400" />
-                  <span>Service Cities</span>
-                </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </motion.div>
 
-          {/* City grid */}
+          {/* CTA card */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl font-bold text-brand-navy mb-6">
-              Major Cities We Serve
-            </h3>
-            <div className="grid grid-cols-2 gap-3 mb-8">
-              {CITIES.slice(0, 12).map((city, i) => (
-                <motion.div
-                  key={city.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="flex items-center gap-2 group cursor-pointer"
-                >
-                  <MapPin
-                    className={`w-4 h-4 flex-shrink-0 transition-colors duration-200 ${
-                      city.isHQ ? "text-brand-red" : "text-gray-400 group-hover:text-brand-red"
-                    }`}
-                  />
-                  <span
-                    className={`text-sm transition-colors duration-200 ${
-                      city.isHQ
-                        ? "font-bold text-brand-red"
-                        : "text-gray-600 group-hover:text-brand-navy font-medium"
-                    }`}
-                  >
-                    {city.name}
-                    {city.isHQ && (
-                      <span className="ml-1 text-[10px] bg-brand-red/10 text-brand-red px-1.5 py-0.5 rounded-full">HQ</span>
-                    )}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="bg-brand-red/5 border border-brand-red/10 rounded-2xl p-5">
-              <p className="text-brand-navy font-semibold mb-1">Don&apos;t see your city?</p>
-              <p className="text-gray-500 text-sm mb-4">
-                We service 100+ cities across India. Contact us for your specific location.
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8 h-full flex flex-col">
+              <h3 className="text-white font-bold text-lg mb-2">
+                Don&apos;t see your city?
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                Our service area covers 30+ cities across Eastern India. We can often
+                accommodate moves to and from locations not listed here — just reach out
+                and we&apos;ll confirm availability.
               </p>
-              <a
-                href="#quote"
-                className="inline-flex items-center gap-2 text-brand-red hover:text-brand-red-dark font-semibold text-sm transition-colors duration-200 group"
+
+              <div className="space-y-3 mb-6 flex-1">
+                {[
+                  "Free quote within 30 minutes",
+                  "Door-to-door service across Eastern India",
+                  "GPS-tracked vehicles on all routes",
+                  "Insurance coverage on every move",
+                ].map(f => (
+                  <div key={f} className="flex items-center gap-2.5 text-sm text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-brand-red rounded-full flex-shrink-0" />
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <a href="#quote"
+                className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all duration-200 hover:shadow-red-glow active:scale-95 self-start group"
               >
                 Check availability
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
