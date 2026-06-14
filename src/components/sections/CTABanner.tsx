@@ -60,15 +60,13 @@ export default function CTABanner() {
           </span>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Get Your{" "}
-            <span className="text-gradient">Free Moving</span>
-            <br />
-            Estimate Today
+            Contact{" "}
+            <span className="text-gradient">Sarkar Packers and Movers</span> {" "}
+             Today !
           </h2>
 
           <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Join <span className="text-white font-semibold">5000+</span> happy customers
-            who trusted Sarkar Packers for their relocation. Get a transparent quote in minutes.
+            Searching for honest <span className="text-white font-semibold">Packers and Movers </span> for vehicle transportation services, household shifting services and office relocation services?
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">

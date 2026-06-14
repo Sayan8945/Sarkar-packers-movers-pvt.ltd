@@ -161,7 +161,7 @@ export default function Navbar() {
     <>
       {/* ── Header ─────────────────────────────────────── */}
       <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? "bg-brand-navy/95 backdrop-blur-xl shadow-2xl border-b border-white/5" : "bg-brand-navy"}`}>
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-1">
           <div className="flex items-center justify-between h-18 lg:h-24 gap-2 lg:gap-4">
 
             {/* Logo */}

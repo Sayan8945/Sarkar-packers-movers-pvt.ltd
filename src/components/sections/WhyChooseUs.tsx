@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1.5 bg-brand-red/10 text-brand-red text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
-                Why OM Packers
+                Why Sarkar Packers and Movers
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-navy mb-4 leading-tight">
                 The Smarter Way to{" "}
@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
             <div className="relative rounded-3xl shadow-2xl overflow-hidden">
               <div className="relative h-[520px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1620455800201-7f00aeef12ed?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Professional movers handling goods"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

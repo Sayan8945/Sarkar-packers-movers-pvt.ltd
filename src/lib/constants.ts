@@ -23,18 +23,18 @@ export const SERVICES = [
     id: "household",
     title: "Household Shifting",
     description:
-      "Complete home relocation with professional packing, careful handling, and safe delivery to your new destination.",
+      "Our company offer secure and effective household shifting services for 1bhk, 2bhk and 3bhk and also our team carefully packs and transports personal belongings, furniture, appliances, electronics and kitchenware with utmost care and preciseness.",
     icon: "Home",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1713276720682-3bad65825bd4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: ["Door-to-door service", "Insurance coverage", "Expert team"],
   },
   {
     id: "office",
     title: "Office Relocation",
     description:
-      "Minimal downtime office moves with systematic dismantling, transport, and setup at your new workspace.",
+      "With our company’s office relocation services that are planned to reduce downtime and assure a smooth transition for businesses, we handle office equipment, furniture, computers, and documents professionally.",
     icon: "Building2",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1566112718365-4c8ccbedc3d9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: ["IT equipment handling", "Furniture assembly", "Weekend moves"],
   },
   {
@@ -43,7 +43,7 @@ export const SERVICES = [
     description:
       "Safe enclosed car carrier transport with real-time tracking and comprehensive vehicle insurance.",
     icon: "Car",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1748215041497-fdf9c4727681?q=80&w=738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: ["Enclosed carriers", "GPS tracking", "Zero damage guarantee"],
   },
   {
@@ -52,110 +52,131 @@ export const SERVICES = [
     description:
       "Specialized two-wheeler transport with protective packaging and timely delivery across India.",
     icon: "Bike",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1558686494-e7e23303ac28?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: ["Secure strapping", "Anti-scratch wrapping", "Pan-India delivery"],
   },
   {
     id: "warehousing",
-    title: "Warehousing",
+    title: "Local Shifting",
     description:
-      "Secure, climate-controlled storage solutions for short and long-term needs with 24/7 surveillance.",
+      "Even if you are shifting within the nearby areas or same city, our local shifting services assure fast and stress-free transportation of your goods.",
     icon: "Warehouse",
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1757940059959-662478f87b72?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: ["24/7 security", "Climate control", "Flexible duration"],
   },
   {
     id: "packing",
-    title: "Packing Services",
+    title: "Domestic Relocation",
     description:
-      "Premium packing materials and expert techniques to ensure every item reaches safely.",
+      "Individuals, families and businesses thinking of moving to another city or states? We provide dependable intercity shifting services and domestic relocation services across many cities of india with complete safety and timely delivery",
     icon: "Package",
-    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1558957543-ab3e457707a6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: ["Custom crating", "Bubble wrap protection", "Labeling system"],
   },
 ];
 
 export const WHY_CHOOSE_US = [
-  { title: "IBA Approved & Licensed", desc: "Certified by Indian Banks Association — trusted for bank employee relocations." },
-  { title: "17+ Years of Excellence", desc: "Over a decade and half of expertise in safe and reliable relocation services." },
-  { title: "Pan-India Network", desc: "100+ cities covered with a strong network of trained professionals." },
-  { title: "Real-Time GPS Tracking", desc: "Track your goods live from pickup to delivery on your smartphone." },
-  { title: "Comprehensive Insurance", desc: "Full transit insurance coverage for complete peace of mind." },
-  { title: "Transparent Pricing", desc: "No hidden charges. Get a detailed quote upfront before we begin." },
+   {
+    title: "Proficient Packers & Movers Professionals",
+    desc: "Experienced and trained relocation experts ensuring a smooth and hassle-free moving experience."
+  },
+  {
+    title: "Premium-Quality Packing Materials",
+    desc: "High-grade packing supplies used to protect your belongings from damage during transit."
+  },
+  {
+    title: "Safe & Secure Goods Transportation",
+    desc: "Reliable transportation services with a strong focus on the safety and security of your items."
+  },
+  {
+    title: "Timely Pickup & Delivery",
+    desc: "Efficient scheduling and logistics to ensure your goods are picked up and delivered on time."
+  },
+  {
+    title: "Transparent & Affordable Pricing",
+    desc: "Competitive rates with no hidden charges, providing complete cost transparency."
+  },
+  {
+    title: "Door-to-Door Relocation Services",
+    desc: "Comprehensive moving solutions from your current location directly to your destination."
+  },
+  {
+    title: "Customized Moving Solutions",
+    desc: "Flexible relocation plans tailored to your specific requirements and budget."
+  },
+  {
+    title: "Dedicated Customer Support",
+    desc: "Friendly support team available to assist you throughout the entire moving process."
+  },
+  {
+    title: "Nationwide Service Network",
+    desc: "Extensive coverage across cities and states for seamless domestic relocation services."
+  },
+  {
+    title: "Safety & Customer Satisfaction Focus",
+    desc: "Committed to delivering secure moving services while ensuring complete customer satisfaction."
+  }
 ];
 
 export const TESTIMONIALS = [
   {
-    name: "Priya Sharma",
-    role: "HR Manager, TCS Kolkata",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Sanjay Gupta",
+    role: "HR Manager, TCS Guwahati",
+    image: "https://randomuser.me/api/portraits/men/58.jpg",
     rating: 5,
-    text: "Absolutely seamless experience! Sarkar Packers moved our entire 3BHK without a single scratch. The team was professional, punctual, and handled everything with extreme care. Highly recommended!",
-    city: "Kolkata → Mumbai",
+    text: "I shifted my 2BHK apartment with Sarkar Packers and Movers, the team arrived punctually, packed everything very properly with proper packing stuffs and completed the shifting without any damage. I am very happy with the relocation they gave me.",
+    address: "Guwahati, Assam - 781024",
+    date: "1st April, 2026",
   },
   {
-    name: "Rajesh Kumar",
-    role: "Senior Engineer, Infosys",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-    rating: 5,
-    text: "Used them for office relocation. The process was incredibly smooth — they even set up the new office exactly how we wanted. Zero downtime for our team. Outstanding service!",
-    city: "Kolkata → Bangalore",
-  },
-  {
-    name: "Ananya Bose",
+    name: "Neha Barman",
     role: "Homemaker",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    image: "https://randomuser.me/api/portraits/women/84.jpg",
     rating: 5,
-    text: "My first time moving inter-city and I was so stressed. But Sarkar Packers made it feel effortless. Real-time tracking, careful packing, and on-time delivery. 10/10!",
-    city: "Kolkata → Delhi",
+    text: "was worried about transporting fragile goods but the staff handled everything carefully, the move was less hectic and the pricing was also budget friendly. I will suggest other people also to take their services.",
+    address: "Subhas Pally, Siliguri, West Bengal - 734001",
+    date: "15th May, 2026",
   },
   {
-    name: "Vikram Mehta",
+    name: "Rakesh Singh",
     role: "Business Owner",
-    image: "https://randomuser.me/api/portraits/men/51.jpg",
+    image: "https://randomuser.me/api/portraits/men/69.jpg",
     rating: 5,
-    text: "Moved my car and household goods together. Both arrived in perfect condition. The GPS tracking feature gave me complete peace of mind throughout the journey.",
-    city: "Kolkata → Hyderabad",
-  },
-  {
-    name: "Sunita Das",
-    role: "Teacher",
-    image: "https://randomuser.me/api/portraits/women/22.jpg",
-    rating: 5,
-    text: "Professional, affordable, and reliable. They took extra care of my antique furniture. The packing was excellent — everything wrapped perfectly. Will use again!",
-    city: "Kolkata → Pune",
-  },
+    text: "Good experience overall, the movers were gentle with my goods and also loading and unloading were done expertly hence all my belongings reached securely and punctually.",
+    address: " Kishanganj, Bihar - 855107",
+    date: "9th June, 2026",
+  }
 ];
 
 export const PROCESS_STEPS = [
   {
     step: 1,
-    title: "Request a Quote",
-    description: "Fill our quick form or call us. Get an instant, transparent estimate within minutes.",
-    icon: "FileText",
-  },
-  {
-    step: 2,
-    title: "Free Survey",
-    description: "Our expert visits your home/office to assess items and provide accurate pricing.",
+    title: "Move Assessment",
+    description: "Our company knows your relocation requirements and offers a personalised moving plan.",
     icon: "Search",
   },
   {
-    step: 3,
+    step: 2,
     title: "Professional Packing",
-    description: "Our trained team uses premium materials to pack all your belongings with care.",
+    description: "Our trained team carefully packs all goods using quality packing materials which help in safety during relocation.",
     icon: "Package",
   },
   {
+    step: 3,
+    title: "Safe Loading",
+    description: "Belongings are loaded securely into our well-maintained transport vehicles.",
+    icon: "FileText",
+  },
+  {
     step: 4,
-    title: "Safe Transportation",
-    description: "GPS-tracked vehicles ensure your goods travel safely to the destination.",
+    title: "Transportation",
+    description: "Your goods are transported safely through our reliable goods transportation services.",
     icon: "Truck",
   },
   {
     step: 5,
-    title: "Delivery & Setup",
-    description: "On-time delivery with complete unpacking and setup at your new place.",
+    title: "Unloading & Delivery",
+    description: "Items are unloaded carefully and delivered safely to the desired destination.",
     icon: "CheckCircle",
   },
 ];
@@ -180,43 +201,18 @@ export const CITIES = [
 
 export const FAQS = [
   {
-    question: "What is your service area?",
+    question: "What is the cost for relocation service?",
     answer:
-      "We operate pan-India with coverage across 100+ cities. Our headquarters is in Kolkata, and we have partner networks in all major metros including Mumbai, Delhi, Bangalore, Chennai, Hyderabad, and more.",
+      "The price of packing and moving services depends on the services required, distance, and volume of goods."
   },
   {
-    question: "Are you IBA approved?",
+    question: "Does your company offer packing essentials?",
     answer:
-      "Yes, Sarkar Packers and Movers Pvt. Ltd. is fully IBA (Indian Banks Association) approved. This certification ensures we meet the highest standards of service quality and reliability, making us eligible to handle bank employee relocations.",
+      "Totally, we use premium-quality packing materials to assure maximum safeguard of your goods."
   },
   {
-    question: "Do you provide insurance for goods?",
+    question: "Can you transport cars and bikes?",
     answer:
-      "Absolutely. We offer comprehensive transit insurance for all shipments. Our insurance covers damage, theft, and loss during transit. We recommend full coverage for high-value items.",
-  },
-  {
-    question: "How far in advance should I book?",
-    answer:
-      "We recommend booking at least 7-10 days in advance for local moves and 15-20 days for inter-city moves. However, we also handle urgent relocations — contact us for last-minute availability.",
-  },
-  {
-    question: "Can I track my shipment?",
-    answer:
-      "Yes! All our trucks are equipped with GPS trackers. Once your goods are loaded, you'll receive a tracking link via SMS/WhatsApp to monitor your shipment in real time.",
-  },
-  {
-    question: "What packing materials do you use?",
-    answer:
-      "We use high-quality, industry-standard materials including multi-layered bubble wrap, corrugated boxes, foam sheets, stretch wrap, and custom wooden crates for fragile and valuable items.",
-  },
-  {
-    question: "Do you offer storage/warehousing?",
-    answer:
-      "Yes, we offer short and long-term storage in our secure, climate-controlled warehouses with 24/7 CCTV surveillance. Ideal for situations where there's a gap between your move-out and move-in dates.",
-  },
-  {
-    question: "How is pricing determined?",
-    answer:
-      "Pricing depends on the volume/weight of goods, distance, packing requirements, and additional services. We offer free surveys and transparent, no-hidden-charges quotes before any work begins.",
-  },
+      "Absolutely, we offer secure and dependable bike transportation services and car transportation services across many cities and states."
+  }
 ];

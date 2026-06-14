@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Award, Shield, Star, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,11 +14,70 @@ const trustBadges = [
   { icon: Star, text: "4.9★ Rated" },
 ];
 
+/* ── Rotating headlines ──────────────────────────────────── */
+interface Headline {
+  /* Static prefix shown above — never animates */
+  prefix: string;
+  /* The part that changes — highlighted in brand red */
+  highlight: string;
+  /* Optional suffix after the highlight */
+  suffix: string;
+  sub: string;
+}
+
+const headlines: Headline[] = [
+  {
+    prefix:    "भरोसे को",
+    highlight: "आगे बढ़ाएं,",
+    suffix:    "देखभाल को पहुंचाएं",
+    sub: "Trusted relocation solutions for homes, offices, vehicles, and businesses across India.",
+  },
+  {
+    prefix:    "Safe Moving.",
+    highlight: "Secure Packing.",
+    suffix:    "Guaranteed Peace of Mind.",
+    sub: "Professional packing and moving services with nationwide coverage and expert handling.",
+  },
+];
+
+const slideVariants = {
+  enter: { opacity: 0, y: 28 },
+  center: { opacity: 1, y: 0 },
+  exit:  { opacity: 0, y: -20 },
+};
+
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const bgY   = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+
+  const [index, setIndex]   = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  /* Pause when scrolled out of view */
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setPaused(!entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  /* Auto-rotate every 5 s */
+  useEffect(() => {
+    if (paused) return;
+    const id = setTimeout(
+      () => setIndex(i => (i + 1) % headlines.length),
+      5000
+    );
+    return () => clearTimeout(id);
+  }, [index, paused]);
+
+  const current = headlines[index];
 
   return (
     <section
@@ -110,39 +169,79 @@ export default function HeroSection() {
               ))}
             </motion.div>
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6"
-            >
-              IBA Approved{" "}
-              <span className="relative">
-                <span className="text-gradient">Packers &</span>
+            {/* ── Rotating headline ─────────────────────────── */}
+            {/*
+              Fixed min-height prevents layout shift when headline
+              text wraps differently between the two variants.
+            */}
+            <div className="mb-6 min-h-[160px] sm:min-h-[180px] lg:min-h-[290px] flex flex-col justify-center">
+              <AnimatePresence mode="wait">
                 <motion.div
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-red to-brand-red-light"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 1 }}
-                />
-              </span>
-              <br />
-              <span className="text-gradient">Movers</span>{" "}
-              <span className="text-white/90">in India</span>
-            </motion.h1>
+                  key={index}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+                    {/* Prefix — plain white */}
+                    <span className="block">{current.prefix}</span>
 
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl text-gray-300 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
-            >
-              Safe, Secure and Trusted Relocation Services Across India.{" "}
-              <span className="text-white font-medium">17+ years</span> of excellence in
-              helping families and businesses move.
-            </motion.p>
+                    {/* Highlight — brand red gradient with animated underline */}
+                    <span className="relative inline-block mt-1">
+                      <span className="text-gradient">{current.highlight}</span>
+                      <motion.div
+                        className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full"
+                        initial={{ scaleX: 0, originX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+                        style={{ width: "100%" }}
+                      />
+                    </span>
+
+                    {/* Suffix — muted white */}
+                    {current.suffix && (
+                      <span className="block text-white/85 mt-1">{current.suffix}</span>
+                    )}
+                  </h1>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* ── Rotating subheadline ─────────────────────── */}
+            <div className="mb-8 min-h-[56px] sm:min-h-[48px]">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={`sub-${index}`}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.05 }}
+                  className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0"
+                >
+                  {current.sub}{" "}
+                  <span className="text-white font-medium">17+ years</span> of excellence.
+                </motion.p>
+              </AnimatePresence>
+            </div>
+
+            {/* ── Dot indicators ───────────────────────────── */}
+            <div className="flex gap-2 justify-center lg:justify-start mb-6">
+              {headlines.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  aria-label={`Go to headline ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-400 ${
+                    i === index
+                      ? "w-7 bg-brand-red"
+                      : "w-1.5 bg-white/25 hover:bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
 
             {/* CTA buttons */}
             <motion.div

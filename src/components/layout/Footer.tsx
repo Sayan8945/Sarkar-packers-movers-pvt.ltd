@@ -72,8 +72,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              India&apos;s most trusted IBA approved packers and movers since 2007. Moving
-              families and businesses safely across India.
+              Our team of <span className="text-white font-semibold">Sarkar Packers and Movers</span> is ready to help you with secure packing, safe transportation and stress-free shifting assistance. Call us today for a free estimation and experience a smooth shifting journey with professionals you can rely on
             </p>
 
             {/* IBA Badge */}
