@@ -75,10 +75,10 @@ export default function Footer() {
               Our team of <span className="text-white font-semibold">Sarkar Packers and Movers</span> is ready to help you with secure packing, safe transportation and stress-free shifting assistance. Call us today for a free estimation and experience a smooth shifting journey with professionals you can rely on
             </p>
 
-            {/* IBA Badge */}
+            {/* Verified Badge */}
             <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 rounded-xl px-3 py-2 mb-5">
               <Award className="w-4 h-4 text-brand-red" />
-              <span className="text-brand-red text-xs font-semibold">IBA Approved Mover</span>
+              <span className="text-brand-red text-xs font-semibold">Verified Moving Services</span>
             </div>
 
             <div className="space-y-2.5 text-sm">

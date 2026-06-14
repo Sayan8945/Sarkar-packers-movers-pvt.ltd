@@ -99,7 +99,7 @@ export default function UserLoginPage() {
                 { icon: Package,     text: "Real-time shipment tracking" },
                 { icon: MapPin,      text: "Pan-India coverage — 100+ cities" },
                 { icon: Truck,       text: "Safe, insured transportation" },
-                { icon: CheckCircle, text: "IBA approved & trusted since 2007" },
+                { icon: CheckCircle, text: "Verified Moving Services — trusted since 2007" },
               ].map(({ icon: Icon, text }, idx) => (
                 <motion.div key={text}
                   initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}

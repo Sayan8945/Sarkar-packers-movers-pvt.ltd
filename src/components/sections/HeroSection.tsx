@@ -9,7 +9,7 @@ import QuoteForm from "@/components/sections/QuoteForm";
 import { COMPANY } from "@/lib/constants";
 
 const trustBadges = [
-  { icon: Award, text: "IBA Approved" },
+  { icon: Award, text: "Verified Moving Services" },
   { icon: Shield, text: "Fully Insured" },
   { icon: Star, text: "4.9★ Rated" },
 ];
@@ -144,7 +144,7 @@ export default function HeroSection() {
         />
       ))}
 
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left content */}
           <motion.div style={{ y: textY }} className="text-center lg:text-left">

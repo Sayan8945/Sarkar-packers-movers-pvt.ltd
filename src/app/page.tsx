@@ -14,9 +14,20 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 export default function Home() {
   return (
-    <main className="bg-white overflow-x-hidden">
+    <main className="bg-white">
+      {/*
+        TopHeader : fixed, ~36px tall, visible md+
+        Navbar    : fixed below TopHeader
+
+        Spacer compensates for the combined fixed bar height:
+          mobile  : 72px  (navbar only — TopHeader is hidden md:block)
+          md      : 108px (36px TopHeader + 72px navbar)
+          lg      : 132px (36px TopHeader + 96px navbar)
+      */}
       <TopHeader />
       <Navbar />
+      <div className="h-16 md:h-[100px] lg:h-[116px]" aria-hidden="true" />
+
       <HeroSection />
       <TrustStats />
       <ServicesSection />

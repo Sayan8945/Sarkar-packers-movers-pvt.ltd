@@ -86,7 +86,7 @@ export default function CTABanner() {
 
           {/* Trust row */}
           <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm text-gray-400">
-            {["✓ IBA Approved", "✓ Free Survey", "✓ Transparent Pricing", "✓ GPS Tracking", "✓ Insured Moves"].map((item) => (
+            {["✓ Verified Moving Services", "✓ Free Survey", "✓ Transparent Pricing", "✓ GPS Tracking", "✓ Insured Moves"].map((item) => (
               <span key={item} className="text-gray-300">{item}</span>
             ))}
           </div>

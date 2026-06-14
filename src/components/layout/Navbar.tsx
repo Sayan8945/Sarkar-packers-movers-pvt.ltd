@@ -22,7 +22,7 @@ import type { User as AuthUser } from "@/types/auth";
 const sidebarLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "#why-us" },
-  { label: "IBA Approved", href: "#why-us", badge: true },
+  { label: "Verified Moving", href: "#why-us", badge: true },
   { label: "Network", href: "#cities" },
   { label: "Blog", href: "#" },
   { label: "Contact Us", href: "#contact" },
@@ -40,7 +40,7 @@ const serviceItems = [
 const desktopNavLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "#why-us" },
-  { label: "IBA Approved", href: "#why-us" },
+  { label: "Verified Moving", href: "#why-us" },
   { label: "Network", href: "#cities" },
   { label: "Blog", href: "#" },
   { label: "Contact", href: "#contact" },
@@ -160,13 +160,13 @@ export default function Navbar() {
   return (
     <>
       {/* ── Header ─────────────────────────────────────── */}
-      <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? "bg-brand-navy/95 backdrop-blur-xl shadow-2xl border-b border-white/5" : "bg-brand-navy"}`}>
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-1">
-          <div className="flex items-center justify-between h-18 lg:h-24 gap-2 lg:gap-4">
+      <header className={`fixed top-0 md:top-[36px] left-0 right-0 z-[100] w-full transition-all duration-300 ${scrolled ? "bg-brand-navy/95 backdrop-blur-xl shadow-2xl border-b border-white/5" : "bg-brand-navy"}`}>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-2">
+          <div className="flex items-center justify-between h-16 lg:h-20 gap-2 lg:gap-4">
 
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <div className="relative h-12 w-36 sm:h-14 sm:w-44 lg:h-20 lg:w-64">
+              <div className="relative h-10 w-32 sm:h-12 sm:w-40 lg:h-16 lg:w-52">
                 <Image src="/logo.png" alt="Sarkar Packers and Movers Pvt. Ltd." fill
                   sizes="(max-width:640px) 144px,(max-width:1024px) 176px,256px" className="object-contain" priority
                 />

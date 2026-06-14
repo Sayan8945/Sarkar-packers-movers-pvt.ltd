@@ -118,7 +118,7 @@ export default function UserSignupPage() {
               Create your account and get instant relocation support, real-time tracking, and exclusive offers.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {[["5000+","Happy Customers"],["100+","Cities"],["17+","Years Trust"],["IBA","Approved"]].map(([v, l]) => (
+              {[["5000+","Happy Customers"],["100+","Cities"],["17+","Years Trust"],["✓","Verified"]].map(([v, l]) => (
                 <div key={l} className="bg-white/5 border border-white/10 rounded-xl p-3.5">
                   <div className="text-xl font-bold text-brand-red">{v}</div>
                   <div className="text-gray-400 text-xs mt-0.5">{l}</div>
