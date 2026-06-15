@@ -21,11 +21,11 @@ import type { User as AuthUser } from "@/types/auth";
 
 /* ─── data ─────────────────────────────────────────────── */
 const sidebarLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "#why-us" },
-  { label: "Verified Moving", href: "#why-us", badge: true },
-  { label: "Network", href: "#cities" },
-  { label: "Blog", href: "#" },
+  { label: "Home",       href: "/" },
+  { label: "About Us",   href: "#about" },
+  { label: "Process",    href: "#process", badge: true },
+  { label: "Network",    href: "#cities" },
+  { label: "Blog",       href: "#why-us" },
   { label: "Contact Us", href: "#contact" },
 ];
 
@@ -39,11 +39,11 @@ const serviceItems = [
 ];
 
 const desktopNavLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "#why-us" },
-  { label: "Verified Moving", href: "#why-us" },
+  { label: "Home",    href: "/" },
+  { label: "About",   href: "#about" },
+  { label: "Process", href: "#process" },
   { label: "Network", href: "#cities" },
-  { label: "Blog", href: "#" },
+  { label: "Blog",    href: "#why-us" },
   { label: "Contact", href: "#contact" },
 ];
 

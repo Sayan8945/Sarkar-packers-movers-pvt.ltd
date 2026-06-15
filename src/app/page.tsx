@@ -2,6 +2,7 @@ import TopHeader from "@/components/layout/TopHeader";
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import TrustStats from "@/components/sections/TrustStats";
+import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Testimonials from "@/components/sections/Testimonials";
@@ -30,6 +31,7 @@ export default function Home() {
 
       <HeroSection />
       <TrustStats />
+      <AboutSection />
       <ServicesSection />
       <WhyChooseUs />
       <Testimonials />
