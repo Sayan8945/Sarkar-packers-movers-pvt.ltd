@@ -7,15 +7,15 @@ export const COMPANY = {
   email: "ranadips12@gmail.com",
   address: "123, Park Street, Kolkata - 700016, West Bengal",
   whatsapp: "917364963008",
-  founded: 2007,
-  experience: 17,
+  founded: 2021,
+  experience: 5,
 };
 
 export const STATS = [
-  { value: 5000, suffix: "+", label: "Happy Customers" },
-  { value: 10000, suffix: "+", label: "Successful Moves" },
-  { value: 100, suffix: "+", label: "Cities Covered" },
-  { value: 17, suffix: "+", label: "Years Experience" },
+  { value: 100, suffix: "+", label: "Happy Customers" },
+  { value: 200, suffix: "+", label: "Successful Moves" },
+  { value: 30, suffix: "+", label: "Cities Covered" },
+  { value: 5, suffix: "+", label: "Years Experience" },
 ];
 
 export const SERVICES = [
@@ -25,7 +25,7 @@ export const SERVICES = [
     description:
       "Our company offer secure and effective household shifting services for 1bhk, 2bhk and 3bhk and also our team carefully packs and transports personal belongings, furniture, appliances, electronics and kitchenware with utmost care and preciseness.",
     icon: "Home",
-    image: "https://images.unsplash.com/photo-1713276720682-3bad65825bd4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/service2.jpeg",
     features: ["Door-to-door service", "Insurance coverage", "Expert team"],
   },
   {
@@ -34,7 +34,7 @@ export const SERVICES = [
     description:
       "With our company’s office relocation services that are planned to reduce downtime and assure a smooth transition for businesses, we handle office equipment, furniture, computers, and documents professionally.",
     icon: "Building2",
-    image: "https://images.unsplash.com/photo-1566112718365-4c8ccbedc3d9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/service3.jpeg",
     features: ["IT equipment handling", "Furniture assembly", "Weekend moves"],
   },
   {
@@ -43,7 +43,7 @@ export const SERVICES = [
     description:
       "Safe enclosed car carrier transport with real-time tracking and comprehensive vehicle insurance.",
     icon: "Car",
-    image: "https://images.unsplash.com/photo-1748215041497-fdf9c4727681?q=80&w=738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/service6.jpg",
     features: ["Enclosed carriers", "GPS tracking", "Zero damage guarantee"],
   },
   {
@@ -52,11 +52,11 @@ export const SERVICES = [
     description:
       "Specialized two-wheeler transport with protective packaging and timely delivery across India.",
     icon: "Bike",
-    image: "https://images.unsplash.com/photo-1558686494-e7e23303ac28?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/service5.jpg",
     features: ["Secure strapping", "Anti-scratch wrapping", "Pan-India delivery"],
   },
   {
-    id: "warehousing",
+    id: "Local",
     title: "Local Shifting",
     description:
       "Even if you are shifting within the nearby areas or same city, our local shifting services assure fast and stress-free transportation of your goods.",
@@ -65,12 +65,12 @@ export const SERVICES = [
     features: ["24/7 security", "Climate control", "Flexible duration"],
   },
   {
-    id: "packing",
+    id: "Domestic",
     title: "Domestic Relocation",
     description:
       "Individuals, families and businesses thinking of moving to another city or states? We provide dependable intercity shifting services and domestic relocation services across many cities of india with complete safety and timely delivery",
     icon: "Package",
-    image: "https://images.unsplash.com/photo-1558957543-ab3e457707a6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/service1.jpeg",
     features: ["Custom crating", "Bubble wrap protection", "Labeling system"],
   },
 ];

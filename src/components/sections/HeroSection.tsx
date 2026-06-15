@@ -72,7 +72,7 @@ export default function HeroSection() {
     if (paused) return;
     const id = setTimeout(
       () => setIndex(i => (i + 1) % headlines.length),
-      5000
+      3500
     );
     return () => clearTimeout(id);
   }, [index, paused]);
@@ -222,7 +222,7 @@ export default function HeroSection() {
                   className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0"
                 >
                   {current.sub}{" "}
-                  <span className="text-white font-medium">17+ years</span> of excellence.
+                  <span className="text-white font-medium">5+ years</span> of excellence.
                 </motion.p>
               </AnimatePresence>
             </div>
@@ -272,9 +272,9 @@ export default function HeroSection() {
               className="grid grid-cols-3 gap-4 max-w-sm mx-auto lg:mx-0"
             >
               {[
-                { value: "5000+", label: "Customers" },
-                { value: "100+", label: "Cities" },
-                { value: "17+", label: "Years" },
+                { value: "200+", label: "Customers" },
+                { value: "30+", label: "Cities" },
+                { value: "5+", label: "Years" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center lg:text-left">
                   <div className="text-2xl font-bold text-brand-red">{value}</div>

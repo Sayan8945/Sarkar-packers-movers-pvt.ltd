@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
             <div className="relative rounded-3xl shadow-2xl overflow-hidden">
               <div className="relative h-[520px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1620455800201-7f00aeef12ed?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/images/service4.jpeg"
                   alt="Professional movers handling goods"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -104,11 +104,11 @@ export default function WhyChooseUs() {
               className="absolute top-8 left-0 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100 min-w-[140px] z-10"
             >
               <div className="flex items-baseline gap-1 mb-0.5">
-                <span className="text-3xl font-extrabold text-brand-red leading-none">4.9</span>
+                <span className="text-3xl font-extrabold text-brand-red leading-none">4.5</span>
                 <span className="text-xl font-bold text-amber-400">★</span>
               </div>
               <div className="text-sm font-semibold text-gray-800">Google Rating</div>
-              <div className="text-xs text-gray-400 mt-0.5">Based on 1,200+ reviews</div>
+              <div className="text-xs text-gray-400 mt-0.5">Based on 100+ reviews</div>
             </motion.div>
 
             {/* Floating badge — outside overflow-hidden */}
@@ -117,9 +117,9 @@ export default function WhyChooseUs() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="absolute bottom-4 right-0 bg-brand-red rounded-2xl shadow-2xl p-4 text-white min-w-[120px] z-10"
             >
-              <div className="text-3xl font-extrabold leading-none mb-0.5">17+</div>
+              <div className="text-3xl font-extrabold leading-none mb-0.5">5+</div>
               <div className="text-sm font-semibold opacity-95">Years of Trust</div>
-              <div className="text-xs opacity-75 mt-0.5">Since 2007</div>
+              <div className="text-xs opacity-75 mt-0.5">Since 2021</div>
             </motion.div>
 
             {/* Background blob */}
