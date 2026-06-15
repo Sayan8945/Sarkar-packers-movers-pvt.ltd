@@ -21,8 +21,8 @@ const IndiaCoverageMap = dynamic(
 const COVERAGE_STATS = [
   { value: 30,   suffix: "+", label: "Cities Covered" },
   { value: 4,    suffix: "",  label: "States Served"  },
-  { value: 17,   suffix: "+", label: "Years Experience" },
-  { value: 5000, suffix: "+", label: "Successful Relocations" },
+  { value: 5,   suffix: "+", label: "Years Experience" },
+  { value: 100, suffix: "+", label: "Successful Relocations" },
 ];
 
 /* ── Featured cities grouped by state ──────────────────── */
