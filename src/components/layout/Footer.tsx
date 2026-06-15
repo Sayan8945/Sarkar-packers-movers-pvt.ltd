@@ -29,14 +29,14 @@ const services = [
 ];
 
 const cities = [
+  "Coochbehar",
+  "Siliguri",
+  "Jalpaiguri",
+  "Alipurduar",
+  "Malda",
+  "Durgapur",
   "Kolkata",
-  "Mumbai",
-  "Delhi",
-  "Bangalore",
-  "Chennai",
-  "Hyderabad",
-  "Pune",
-  "Ahmedabad",
+  "Guwahati",
 ];
 
 export default function Footer() {
@@ -138,7 +138,7 @@ export default function Footer() {
                 onClick={e => handleNavClick(e, "#cities")}
                 className="text-brand-red hover:text-brand-red-light text-xs font-semibold transition-colors duration-200 cursor-pointer"
               >
-                View all 100+ cities →
+                View all 50+ cities →
               </a>
             </div>
           </div>

@@ -5,7 +5,7 @@ export const COMPANY = {
   phone: "+91 73649 63008",
   phone2: "+91 73649 63008",
   email: "ranadips12@gmail.com",
-  address: "123, Park Street, Kolkata - 700016, West Bengal",
+  address: "166, Pundibari, Coochbehar - 736165, West Bengal",
   whatsapp: "917364963008",
   founded: 2021,
   experience: 5,
@@ -182,21 +182,21 @@ export const PROCESS_STEPS = [
 ];
 
 export const CITIES = [
-  { name: "Kolkata", x: 72, y: 48, isHQ: true },
-  { name: "Mumbai", x: 22, y: 52 },
-  { name: "Delhi", x: 40, y: 25 },
-  { name: "Bangalore", x: 35, y: 72 },
-  { name: "Chennai", x: 42, y: 75 },
-  { name: "Hyderabad", x: 40, y: 63 },
-  { name: "Pune", x: 27, y: 56 },
-  { name: "Ahmedabad", x: 22, y: 40 },
-  { name: "Jaipur", x: 34, y: 32 },
-  { name: "Lucknow", x: 50, y: 32 },
+  { name: "Siliguri", x: 72, y: 48, isHQ: true },
+  { name: "Coochbehar", x: 22, y: 52 },
+  { name: "Dinhata", x: 40, y: 25 },
+  { name: "Alipurduar", x: 35, y: 72 },
+  { name: "Jalpaiguri", x: 42, y: 75 },
+  { name: "Durgapur", x: 40, y: 63 },
+  { name: "Malda", x: 27, y: 56 },
+  { name: "Kharagpur", x: 22, y: 40 },
+  { name: "Kolkata", x: 34, y: 32 },
+  { name: "Guwahati", x: 50, y: 32 },
   { name: "Patna", x: 60, y: 35 },
   { name: "Bhubaneswar", x: 65, y: 55 },
-  { name: "Guwahati", x: 78, y: 30 },
-  { name: "Chandigarh", x: 38, y: 18 },
-  { name: "Surat", x: 22, y: 47 },
+  { name: "Dhubri", x: 78, y: 30 },
+  { name: "Howrah", x: 38, y: 18 },
+  { name: "Hooghly", x: 22, y: 47 },
 ];
 
 export const FAQS = [
