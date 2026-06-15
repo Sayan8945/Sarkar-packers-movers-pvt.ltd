@@ -23,10 +23,10 @@ import type { User as AuthUser } from "@/types/auth";
 const sidebarLinks = [
   { label: "Home",       href: "/" },
   { label: "About Us",   href: "#about" },
-  { label: "Process",    href: "#process", badge: true },
+  { label: "Process",    href: "#process" },
   { label: "Network",    href: "#cities" },
   { label: "Blog",       href: "#why-us" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "#contact", badge: true },
 ];
 
 const serviceItems = [
